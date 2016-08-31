@@ -53,7 +53,8 @@ def cleaner(msg_list=None):
 
 
 def build_xml(args):
-    dm = DarcMail(args[0], args[1], args[2])
+    dm = DarcMail(args.file, args.arguments[0])
+    dm.do_inventory()
 
 
 def test_answer():
@@ -86,3 +87,5 @@ if __name__ == "__main__":
         cleaner()
     elif tc[0] == 'process':
         pass
+    elif tc[0] == 'build_xml':
+        build_xml(args)

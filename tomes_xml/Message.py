@@ -48,6 +48,10 @@ class MessageBlock:
                 try:
                     headers["Return-Path"] = elem.find(self.namespace+"Value").text
                 except AttributeError:
+                    """This is bad form, but I didn't have the time to fully flesh out the
+                       Error Msg.
+                       TODO: Needs to fail gracefully
+                    """
                     continue
         return headers
 
